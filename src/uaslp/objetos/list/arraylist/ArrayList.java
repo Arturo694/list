@@ -1,100 +1,94 @@
 package uaslp.objetos.list.arraylist;
 
+import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.List;
 
-
-public class ArrayList {
-
-
+public class ArrayList implements List {
     private static final int INITIAL_SIZE = 2;
     private String []array;
-    private int size; //tam arr
+    private int size; // cuántos datos se han insertado al arreglo
 
-    //constructor
-    public ArrayList () {
-        array = new String[INITIAL_SIZE];
+    public ArrayList(){
+        array = new String [INITIAL_SIZE];
     }
 
-    public void addAtTail (String data) {
-
-        if (size == array.length) {
+    public void addAtTail(String data){
+        if(size == array.length){
             increaseSize();
         }
-
         array[size] = data;
         size++;
     }
-
-    public int getSize () {
-        return size;
-    }
-
-    private void increaseSize () {
-        //crear otro arreglo doble tam
-        String []newArray = new String[array.length * 2];
-
-        for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
-        }
-
-        array = newArray;
-    }
-
-    public void addAtFront (String data) {
-        if (size == array.length) {
+    public void addAtFront(String data){
+        if(size == array.length){
             increaseSize();
         }
-
-        //inverso el for y re ordenar para acomodar
-        for (int i = size; i > 0; i--) {
-            array[i] = array[i - 1];
+        if(size < 1){
+            array[0] = data;
+        }else{
+            String aux = array[size-1];
+            for(int i = size; i > 0; i--){
+                array[i] = array[i -1];
+            }
+            array[0] = data;
         }
-        array[0] = data;
         size++;
     }
-
-    public void remove (int index) {
-        //ordenar de nuevo, no dejar espacio en blanco
-        for (int i = index; i < size; i++) {
-            array[i] = array[i + 1];
+    public void remove(int index){
+        if(index <= size) {
+            for(int i = index ; i < size; i++){
+                array[i] = array[i + 1];
+            }
+            size--;
+        }else {
+            System.out.println("error: index not found");
         }
-
-        size--;
-        array[size] = null;
     }
-
-    public void removeAll () {
-        for (int i = 0; i < size; i++) {
-            array[i] = null;
+    public void removeAll(){
+        String []newArray = new String[INITIAL_SIZE];
+        array = newArray;
+        size= 0;
+    }
+    public void setAt(int index, String data){
+        array[index] = data;
+    }
+    public String getAt(int index){
+        String data = null;
+        int indexIterator = 0;
+        if(index <= size)
+        {
+            ArrayListIterator iterator = (ArrayListIterator) getIterator();
+            while (iterator.hasNext() && indexIterator != index){
+                data = iterator.next();
+                indexIterator++;
+            }
+            return data;
+        }else {
+            return "error: index not found";
         }
-
-        size = 0; //resetear el tamaño
     }
-
-    public void removeWithValue (String value) {
-        String []newArray = new String[array.length];
-
-        int aux = 0;
-
-        for (int i = 0; i < size; i++) {
-            if (!array[i].equals(value)) { //verificar valores
-                newArray[aux++] = array[i];
+    public void removeAllWithValue(String data){
+        int counterEliminations = 0;
+        for(int i = 0; i < getSize(); i++){
+            if(data.equals(array[i-counterEliminations])){
+                remove(i - counterEliminations);
+                counterEliminations++;
             }
         }
 
+    }
+    public int getSize(){
+        return size;
+    }
+    private void increaseSize(){
+        String []newArray = new String[array.length * 2];
+
+        for(int i = 0; i < array.length; i++){
+            newArray[i] = array[i];
+        }
         array = newArray;
-        size = aux;
     }
-
-    public void setAt (int index, String value) {
-        array[index] = value;
+    public Iterator getIterator() {
+        return new ArrayListIterator(array);
     }
-
-    public String getAt (int index) {
-        return array[index];
-    }
-
-    public ArrayListIterator getIterator () {
-        return new ArrayListIterator(this);
-    }
-
 }

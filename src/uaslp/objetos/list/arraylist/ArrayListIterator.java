@@ -1,19 +1,18 @@
 package uaslp.objetos.list.arraylist;
 
-public class ArrayListIterator {
+import uaslp.objetos.list.Iterator;
 
-    private ArrayList arrayList; //arr ahora es nodo
-    private int index = 0;
-
-    public ArrayListIterator (ArrayList arr) {
-        arrayList = arr;
+public class ArrayListIterator implements Iterator {
+    String []currentIndex;
+    int index;
+    ArrayListIterator(String []first){
+        currentIndex = first;
+        index = 0;
     }
-
-    public boolean hashNext () {
-        return index < arrayList.getSize();
-    }
-
-    public String next () {
-        return arrayList.getAt(index++);
+    public boolean hasNext(){return currentIndex[index] != null;}
+    public String next(){
+        String data = currentIndex[index];
+        index++;
+        return data;
     }
 }

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6113367-b3f0-427e-b443-03125d4de565" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/Iterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/List.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedListIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedListIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -34,12 +40,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ACER/Documents/Arturo/TecnologiaOO/TareasJava/LinkedList"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
